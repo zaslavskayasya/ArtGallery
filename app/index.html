@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="Gallery">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style/style.css">
+
+</head>
+<body>
+<h1 class="large">Angular + Webpack</h1>
+
+{{ 2+ 2 + 90}}
+<header-dir></header-dir>
+<div ng-controller="AlertDemoCtrl">
+    <script type="text/ng-template" id="alert.html">
+        <div class="alert" style="color:red" role="alert">
+            <div ng-transclude></div>
+        </div>
+    </script>
+
+    <div class="alert warning" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</div>
+    <div class="alert warning" template-url="alert.html">A happy alert!</div>
+    <button type="button" class='btn  btn-warning' ng-click="addAlert()">Add Alert</button>
+</div>
+<script src=".././dist/bundle.js"></script>
+</body>
+</html>
